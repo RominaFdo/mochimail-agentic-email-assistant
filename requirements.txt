@@ -1,0 +1,5 @@
+aisuite[all]
+python-dotenv
+openai
+google-generativeai
+google-cloud-aiplatform
