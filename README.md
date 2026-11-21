@@ -115,8 +115,6 @@ Then open http://127.0.0.1:8000. Stop it with `Ctrl+C` (or `docker compose down`
 
 Your `.env` is passed in when the container starts; it is never copied into the image.
 
-> **Antivirus note:** if antivirus on your PC scans HTTPS traffic (e.g. Avast Web Shield), the container can fail with `CERTIFICATE_VERIFY_FAILED`, because Linux inside the container doesn't trust the antivirus certificate. Turn off HTTPS scanning in the antivirus, or run without Docker.
-
 ## Files
 
 | File | What it does |
@@ -132,5 +130,5 @@ Your `.env` is passed in when the container starts; it is never copied into the 
 ## Notes
 
 * The inbox lives in memory and resets when the program restarts (or via **Reset inbox** in the UI).
-* `truststore` is used so HTTPS works when antivirus (e.g. Avast Web Shield) inspects traffic.
+* `truststore` is used so HTTPS works when antivirus software inspects traffic.
 * To change the model, edit `DEFAULT_MODEL` in `agent.py` (e.g. `together:openai/gpt-oss-120b`).
