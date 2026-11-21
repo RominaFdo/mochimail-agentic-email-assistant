@@ -103,6 +103,20 @@ venv\Scripts\python server.py
 venv\Scripts\python main.py
 ```
 
+### Run with Docker
+
+Needs [Docker Desktop](https://www.docker.com/products/docker-desktop/) running and the `.env` file above. No Python or venv required.
+
+```powershell
+docker compose up --build
+```
+
+Then open http://127.0.0.1:8000. Stop it with `Ctrl+C` (or `docker compose down`).
+
+Your `.env` is passed in when the container starts; it is never copied into the image.
+
+> **Antivirus note:** if antivirus on your PC scans HTTPS traffic (e.g. Avast Web Shield), the container can fail with `CERTIFICATE_VERIFY_FAILED`, because Linux inside the container doesn't trust the antivirus certificate. Turn off HTTPS scanning in the antivirus, or run without Docker.
+
 ## Files
 
 | File | What it does |
@@ -113,6 +127,7 @@ venv\Scripts\python main.py
 | `display_functions.py` | Extracts / prints the tool-call trace |
 | `server.py` + `static/` | FastAPI backend and the Mochimail web UI |
 | `main.py` | Terminal chat loop |
+| `Dockerfile` + `docker-compose.yml` | Container setup for running the web UI with Docker |
 
 ## Notes
 
