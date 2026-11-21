@@ -1,5 +1,7 @@
-aisuite[all]
+aisuite
+httpx>=0.27,<0.28  # for aisuite 0.1.14
+docstring-parser
 python-dotenv
-openai
-google-generativeai
-google-cloud-aiplatform
+truststore
+fastapi
+uvicorn
