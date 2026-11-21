@@ -1,4 +1,4 @@
-# Email Assistant (Mochimail 🌸)
+# Agentic Email Assistant: Mochimail 🌸
 
 * A project adapted from Andrew Ng's *Agentic AI* course on DeepLearning.AI
 * An **AI email agent** that takes natural-language commands ("Delete the happy hour email") and executes multi-step tool calls against a mock email service
