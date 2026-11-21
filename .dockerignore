@@ -1,0 +1,14 @@
+# Never bake secrets into the image; pass them at run time (--env-file .env).
+.env
+
+# Local-only stuff
+venv/
+.git/
+.vscode/
+__pycache__/
+*.py[cod]
+images/
+logs/
+Dockerfile
+docker-compose.yml
+.dockerignore
