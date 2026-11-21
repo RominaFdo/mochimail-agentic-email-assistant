@@ -2,6 +2,7 @@
 
 Run:  venv\\Scripts\\python server.py   then open http://127.0.0.1:8000
 """
+import os
 import threading
 from pathlib import Path
 
@@ -104,5 +105,9 @@ def run(req: AgentRequest):
 
 
 if __name__ == "__main__":
-    print("🌸 Mochimail running at http://127.0.0.1:8000")
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    # Locally this stays on 127.0.0.1. In Docker / the cloud, HOST=0.0.0.0 makes the
+    # server reachable from outside the container, and hosts usually set PORT.
+    host = os.getenv("HOST", "127.0.0.1")
+    port = int(os.getenv("PORT", "8000"))
+    print(f"🌸 Mochimail running at http://127.0.0.1:{port}")
+    uvicorn.run(app, host=host, port=port)
